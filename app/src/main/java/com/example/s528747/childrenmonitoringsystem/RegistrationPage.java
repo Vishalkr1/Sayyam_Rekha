@@ -41,30 +41,31 @@ public class RegistrationPage extends AppCompatActivity {
         if(username.length()>0&&password.length()>=8){
             int x= password.compareTo(repassword);
 
-            if(x!=0)
-                Toast.makeText(getApplicationContext(),"password does not match"+repassword,Toast.LENGTH_SHORT).show();
+//             if(x!=0)
+//                 Toast.makeText(getApplicationContext(),"password does not match"+repassword,Toast.LENGTH_SHORT).show();
 
-            String validemail = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+//             String validemail = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
 
-                    "\\@" +
+//                     "\\@" +
 
-                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+//                     "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
 
-                    "(" +
+//                     "(" +
 
-                    "\\." +
+//                     "\\." +
 
-                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+//                     "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
 
-                    ")+";
-
-
+//                     ")+";
 
 
-            Matcher matcher= Pattern.compile(validemail).matcher(email);
 
 
-            if (matcher.matches()){
+//             Matcher matcher= Pattern.compile(validemail).matcher(email);
+
+
+          ///  if (matcher.matches())
+            {
                 BackendlessUser user = new BackendlessUser();
                 user.setPassword(password);
                 user.setEmail(email);
@@ -86,9 +87,9 @@ public class RegistrationPage extends AppCompatActivity {
                 Intent in = new Intent(this,LoginPage.class);
                 startActivity(in);
             }
-            else {
-                Toast.makeText(getApplicationContext(),"Enter Valid Email-Id",Toast.LENGTH_SHORT).show();
-            }
+//            else {
+  //              Toast.makeText(getApplicationContext(),"Enter Valid Email-Id",Toast.LENGTH_SHORT).show();
+    //        }
         }
     }
 
